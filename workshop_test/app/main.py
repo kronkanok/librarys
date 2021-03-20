@@ -119,7 +119,7 @@ def update_books(
 
 
 @app.delete("/Librarys/{library_id}")
-def delete_book_by_id(library_id: str = Path(None, min_length=1, max_length=5)):
+def delete_book_by_id(library_id: str = Path(None, min_length=1, max_length=10)):
     try:
         deleted_library_id, deleted_count = mongo_db.delete(library_id)
     except:
